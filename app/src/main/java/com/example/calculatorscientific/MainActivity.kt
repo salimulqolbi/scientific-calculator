@@ -24,10 +24,16 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             CalculatorScientificTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Calculator(modifier = Modifier.padding(innerPadding), calculatorViewModel)
-                }
+//                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+////                    CalculatorScreen(modifier = Modifier.padding(innerPadding), calculatorViewModel)
+//                }
+                AppContent(calculatorViewModel)
             }
         }
     }
+}
+
+@Composable
+fun AppContent(viewModel: CalculatorViewModel) {
+    MainNavigation(viewModel = viewModel)
 }
